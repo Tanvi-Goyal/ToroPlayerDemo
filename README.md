@@ -1,7 +1,7 @@
 # ToroPlayerDemo
-##Toro Player Demo
+## Toro Player Demo
 
-##About
+## About
 This repo helps users to getting started with Toro and Exoplayer while starting with Video Streaming in Android.
 
 Link to APK - https://drive.google.com/open?id=1ZIvhOHL_243eqUP3eHnyOFTnStEIKi59
