@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Zomato</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="description_text">Food is a huge passion of mine, and because I want to eat whatever I want, I run every morning, and then I do weights a few times a week.</string>
+    <string name="welcome_text">Welcome to SneakPeek</string>
+</resources>
