@@ -130,8 +130,8 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
 
                 @Override
                 public boolean onDown(MotionEvent e) {
-       //                    if(holder.isPlaying()) holder.pause();
-       //                    else holder.play();  
+                    if(holder.isPlaying()) holder.pause();
+                    else holder.play();  
                     return super.onDown(e);
                 }
             });
