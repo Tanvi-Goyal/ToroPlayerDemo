@@ -145,7 +145,7 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
         });
 4.	Memory leaks in the application is maintained using LeakCanary Library.
  
-       if (LeakCanary.isInAnalyzerProcess(this)) {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
         LeakCanary.install(getApplication());
