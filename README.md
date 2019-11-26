@@ -22,8 +22,6 @@ While the goal can be achieved using native Android Video View and Media Control
 
 ExoPlayer is an application level media player for Android. It provides an alternative to Android’s MediaPlayer API for playing audio and video both locally and over the Internet. ExoPlayer supports features not currently supported by Android’s MediaPlayer API, including DASH and SmoothStreaming adaptive playbacks. Unlike the MediaPlayer API, ExoPlayer is easy to customize and extend, and can be updated through Play Store application updates.
 
- You can check out the repo at - 
-
 ## Why Toro
 
 1.	It’s a specially built custom library for android.
@@ -37,7 +35,7 @@ ExoPlayer is an application level media player for Android. It provides an alter
 3.	Tap gestures to seek the video to a different time.
 4.	Handled memory leaks in the application using LeakCanary
 
-T## ech Stack Used 
+## Tech Stack Used 
 The application is made using Toro and Exoplayer for Video Streaming. For animations, I have used the LottieAnimations Library. ButterKnife is used for fast and easy binding of xml components.
 
 ## Implementation
@@ -45,8 +43,7 @@ The application is made using Toro and Exoplayer for Video Streaming. For animat
 1.	To store and retrieve the video state in playerview, PlaybckInfo class of Toro is used. I created a Adapter for the playerview container which implements the CacheManager which maintains the order and key of the player view being currently instantiated by Toro. Further in Mainactivity, the container is set to this cache manager using container.setCacheManager().
 Then using the getSavedPlayerOrder(), all the saved orders are retrieved along this their playback state using PlaybackInfo class .
 
- container.setCacheManager(adapter);
-
+        container.setCacheManager(adapter);
         //Save Link of the current ToroPlayer
         for (int i = 0; i < container.getSavedPlayerOrders().size(); i++) {
             int order = adapter.getOrderForKey(container.getSavedPlayerOrders().get(i));
@@ -55,12 +52,10 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
             container.savePlaybackInfo(order, playbackInfo);
         }
 2.	Smooth scrolling and snapping is maintained in the application using onSmoothScroll function of Linearlayoutmanager and PageSnapHelper class of Android.
- 
- layoutManager = new LinearLayoutManager(this){
+
+        layoutManager = new LinearLayoutManager(this){
             @Override
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int position) {
-
-
                 LinearSmoothScroller smoothScroller = new LinearSmoothScroller(MainActivity.this) {
 
                     private static final float SPEED = 300f;
@@ -81,8 +76,8 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
         
 3.	Gestures are being supported using theGestureDetector Listener of Android overriding the onSingleTap and onDoubleTap methods for play, pause, forward and rewind video functionality.
  
- holder.playerView.setOnTouchListener(new View.OnTouchListener() {
-            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new GestureDetector.SimpleOnGestureListener() {
+       holder.playerView.setOnTouchListener(new View.OnTouchListener() {
+            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new               GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
                     Log.d("TEST", "onDoubleTap");
@@ -102,7 +97,7 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
                         }
 
 
-                    }else if(e.getX()>= arrayList.get(1).getStartCoordinate() && e.getX()<=arrayList.get(1).getEndCoordinate()) {
+                    }else if(e.getX()>= arrayList.get(1).getStartCoordinate() && e.getX()  <=arrayList.get(1).getEndCoordinate()) {
                         Log.d("test", "onDoubleTap: centre");
                     }else if(e.getX()>= arrayList.get(2).getStartCoordinate() && e.getX()<=arrayList.get(2).getEndCoordinate()) {
                         Log.d("test", "onDoubleTap: right");
@@ -135,8 +130,8 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
 
                 @Override
                 public boolean onDown(MotionEvent e) {
-//                    if(holder.isPlaying()) holder.pause();
-//                    else holder.play();
+       //                    if(holder.isPlaying()) holder.pause();
+       //                    else holder.play();  
                     return super.onDown(e);
                 }
             });
@@ -150,7 +145,7 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
         });
 4.	Memory leaks in the application is maintained using LeakCanary Library.
  
- if (LeakCanary.isInAnalyzerProcess(this)) {
+       if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
             // You should not init your app in this process.
             return;
