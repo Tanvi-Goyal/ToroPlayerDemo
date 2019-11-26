@@ -77,7 +77,7 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
 3.	Gestures are being supported using theGestureDetector Listener of Android overriding the onSingleTap and onDoubleTap methods for play, pause, forward and rewind video functionality.
  
        holder.playerView.setOnTouchListener(new View.OnTouchListener() {
-            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new               GestureDetector.SimpleOnGestureListener() {
+            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new                      GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
                     Log.d("TEST", "onDoubleTap");
@@ -146,8 +146,6 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
 4.	Memory leaks in the application is maintained using LeakCanary Library.
  
        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
             return;
         }
         LeakCanary.install(getApplication());
