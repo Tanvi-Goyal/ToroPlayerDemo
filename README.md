@@ -76,8 +76,8 @@ Then using the getSavedPlayerOrder(), all the saved orders are retrieved along t
         
 3.	Gestures are being supported using theGestureDetector Listener of Android overriding the onSingleTap and onDoubleTap methods for play, pause, forward and rewind video functionality.
  
-       holder.playerView.setOnTouchListener(new View.OnTouchListener() {
-            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new                      GestureDetector.SimpleOnGestureListener() {
+          holder.playerView.setOnTouchListener(new View.OnTouchListener() {
+            private GestureDetector gestureDetector = new GestureDetector(holder.itemView.getContext(), new                                 GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
                     Log.d("TEST", "onDoubleTap");
